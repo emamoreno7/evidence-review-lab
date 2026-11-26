@@ -4,6 +4,8 @@ A small public demonstration inspired by two of my private projects, [CYBER-AI a
 
 I wanted a way to show why an automated workflow should distinguish evidence integrity, claim support and permission to act. The example uses a fictional inventory report and a synthetic HTTP response. It does not contain the original engines or customer data.
 
+[Try the live demo](https://emamoreno7.github.io/evidence-review-lab/) — no installation required.
+
 ## Run it
 
 Node.js 22 or newer. No packages, credentials or external services are required.
@@ -37,10 +39,14 @@ A digest match is not proof of origin. The expected digests are fixed in the dem
 
 This is a newly written portfolio example, not a release of CYBER-AI, SENTINEL-AI, ARTEX or AutoPilot. No private code was copied. The original research uses semantic evaluation; this example deliberately uses exact complete-line matching and makes no claim to perform NLI or AI inference. It has no publication, scanning, external network or social-media integration. ELIGIBLE means only that a local demo rule passed. The browser is not a security boundary; the static registry is not a signed or independently trusted evidence store.
 
-The project can also be served as a static site over HTTPS. For GitHub Pages, select the main branch and root folder as the publishing source in repository settings.
+The demo is also hosted on GitHub Pages.
 
 ## Verification
 
-The local run passed 18 unit tests on Node.js 22.16.0. The local HTTP server was also checked for the expected assets and rejected paths. Full browser interaction and GitHub Actions still need verification in the published environment.
+The local run passed 18 unit tests on Node.js 22.16.0. The local HTTP server was also checked for the expected assets and rejected paths. The [GitHub Actions test run](https://github.com/emamoreno7/evidence-review-lab/actions/runs/45786006553) also completed successfully. Full browser interaction has not been covered by automated tests.
 
-No open-source license is included; choose one before reuse or redistribution.
+## Feedback
+
+If you find a scenario that the policy handles incorrectly, feel free to open an issue with a reproducible example. If the demo is useful, a star helps others discover it.
+
+No open-source license is included; reuse and redistribution require permission.
