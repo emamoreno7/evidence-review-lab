@@ -8,18 +8,19 @@ I wanted a way to show why an automated workflow should distinguish evidence int
 
 ## Run it
 
-Node.js 22 or newer. No packages, credentials or external services are required.
+Node.js 22 or newer. No dependency installation, credentials or external services are required.
 
 ```sh
+git clone https://github.com/emamoreno7/evidence-review-lab.git
+cd evidence-review-lab
+npm test
+npm run demo
 npm start
 ```
 
 Open http://127.0.0.1:4173. Try the scenarios, then change the evidence or claim and run the check again. The decision trace shows the expected and observed digests and the reason for the decision.
 
-```sh
-npm test
-npm run demo
-```
+The server listens on the local loopback address only. Leave the terminal open while using the demo; press Ctrl+C to stop it. To run the tests again without stopping the server, use a second terminal in the repository directory.
 
 The same policy module runs in the browser and in Node.js. The tests use the built-in Node test runner; the repository includes a GitHub Actions workflow.
 
