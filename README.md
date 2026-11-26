@@ -1,3 +1,46 @@
 # Evidence Review Lab
 
-A small public demonstration of evidence integrity, claim support and controlled automation. The examples use fictional data.
+A small public demonstration inspired by two of my private projects, [CYBER-AI and SENTINEL-AI](https://github.com/emamoreno7/emamoreno7/blob/main/showcase/cyber-intelligence.md) and [AutoPilot](https://github.com/emamoreno7/emamoreno7/blob/main/showcase/autopilot.md).
+
+I wanted a way to show why an automated workflow should distinguish evidence integrity, claim support and permission to act. The example uses a fictional inventory report and a synthetic HTTP response. It does not contain the original engines or customer data.
+
+## Run it
+
+Node.js 22 or newer. No packages, credentials or external services are required.
+
+```sh
+npm start
+```
+
+Open http://127.0.0.1:4173. Try the scenarios, then change the evidence or claim and run the check again. The decision trace shows the expected and observed digests and the reason for the decision.
+
+```sh
+npm test
+npm run demo
+```
+
+The same policy module runs in the browser and in Node.js. The tests use the built-in Node test runner; the repository includes a GitHub Actions workflow.
+
+## What the example checks
+
+| Scenario | Result |
+| --- | --- |
+| Registered document with matching bytes and exact claim | ELIGIBLE in automatic mode |
+| Modified evidence | BLOCK |
+| Claim not found as a complete line | HOLD |
+| HTTP body with matching digest and claim | HOLD (capture not authenticated) |
+| Manual review or automation off | HOLD |
+
+A digest match is not proof of origin. The expected digests are fixed in the demo registry, not supplied by the person editing the evidence. A matching HTTP body still has no independent capture attestation. Automatic mode cannot override that rule.
+
+## Scope
+
+This is a newly written portfolio example, not a release of CYBER-AI, SENTINEL-AI, ARTEX or AutoPilot. No private code was copied. The original research uses semantic evaluation; this example deliberately uses exact complete-line matching and makes no claim to perform NLI or AI inference. It has no publication, scanning, external network or social-media integration. ELIGIBLE means only that a local demo rule passed. The browser is not a security boundary; the static registry is not a signed or independently trusted evidence store.
+
+The project can also be served as a static site over HTTPS. For GitHub Pages, select the main branch and root folder as the publishing source in repository settings.
+
+## Verification
+
+The local run passed 18 unit tests on Node.js 22.16.0. The local HTTP server was also checked for the expected assets and rejected paths. Full browser interaction and GitHub Actions still need verification in the published environment.
+
+No open-source license is included; choose one before reuse or redistribution.

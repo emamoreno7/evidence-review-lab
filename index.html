@@ -1,0 +1,21 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Evidence Review Lab</title><link rel="stylesheet" href="style.css">
+</head>
+<body><main>
+<header><div class="eyebrow">DOTCOM / PUBLIC DEMO</div><h1>Evidence Review Lab</h1><p>Inspect evidence, test a claim, and see why a local action is held or allowed.</p><div class="note">Synthetic data · Exact-line matching, not NLI · No external actions</div></header>
+<section class="presets"><h2>Try a scenario</h2><div id="scenarios" class="buttons"></div></section>
+<div class="layout"><section class="panel"><h2>01 / Input</h2>
+<label for="source">Registered evidence</label><select id="source"></select>
+<label for="evidence">Evidence text <small>Change a value to test integrity.</small></label><textarea id="evidence" rows="6" spellcheck="false"></textarea>
+<label for="claim">Claim (one complete line)</label><input id="claim" autocomplete="off">
+<label for="mode">Automation mode</label><select id="mode"><option value="off">Off</option><option value="review">Human review required</option><option value="auto">Automatic eligibility check</option></select>
+<button class="primary" id="evaluate">Evaluate evidence</button></section>
+<section class="panel" aria-live="polite"><h2>02 / Decision</h2><div id="decision" class="decision">Not evaluated</div>
+<dl><div><dt>Content integrity</dt><dd id="integrity">—</dd></div><div><dt>Extractive support</dt><dd id="support">—</dd></div><div><dt>Capture authenticity</dt><dd id="authenticity">—</dd></div><div><dt>Reason</dt><dd id="reason">—</dd></div></dl>
+<p class="muted">Eligibility is a local policy result, not publication or proof that a real event occurred.</p>
+<h3>Decision trace</h3><pre id="audit"></pre></section></div>
+<footer>Inspired by CYBER-AI and AutoPilot. A separate demonstration, not their production engine.</footer>
+</main><script type="module" src="src/app.mjs"></script></body></html>
