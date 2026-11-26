@@ -49,4 +49,8 @@ The local run passed 18 unit tests on Node.js 22.16.0. The local HTTP server was
 
 If you find a scenario that the policy handles incorrectly, feel free to open an issue with a reproducible example. If the demo is useful, a star helps others discover it.
 
-No open-source license is included; reuse and redistribution require permission.
+See [CONTRIBUTING.md](CONTRIBUTING.md) for local setup and review expectations. Small test cases, accessibility fixes and independent reproductions are particularly welcome.
+
+## License
+
+[MIT](LICENSE). This license applies to this standalone demo only, not the separate private projects mentioned above.
